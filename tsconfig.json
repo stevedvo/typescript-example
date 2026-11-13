@@ -9,6 +9,7 @@
     "noEmitOnError": true,
     "rootDir": "Scripts",
     "outDir": "wwwroot/js",
+    "types": ["jquery"],
   },
   "include": ["Scripts/**/*.ts"],
 }

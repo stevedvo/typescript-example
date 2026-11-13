@@ -9,17 +9,14 @@ function describeProduct(product: Product): string
 	return `${product.name}: £${product.price.toFixed(2)}`;
 }
 
-const button = document.querySelector<HTMLButtonElement>("#show-product");
-const output = document.querySelector<HTMLParagraphElement>("#result");
+const button = $(`#show-product`);
+const output = $(`#result`);
 
-button?.addEventListener("click", () =>
+button.on(`click`, () =>
 {
-	if (output)
+	output.text(describeProduct(
 	{
-		output.textContent = describeProduct(
-		{
-			name: "Coffee",
-			price: 3.5,
-		});
-	}
+		name: "Coffee",
+		price: 3.5,
+	}));
 });
