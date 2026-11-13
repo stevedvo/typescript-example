@@ -95,3 +95,7 @@ UpgradeLog*.html
 
 # Restored frontend dependencies
 node_modules/
+
+# TypeScript output compiled from Scripts/app.ts
+/wwwroot/js/app.js
+/wwwroot/js/app.js.map
