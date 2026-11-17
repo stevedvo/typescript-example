@@ -1,22 +1,18 @@
-interface Product
+class Product
 {
-	name: string;
-	price: number;
-}
+    constructor(public name: string, public price: number, public currency: "GBP" | "USD" | "EUR" = "GBP") { }
 
-function describeProduct(product: Product): string
-{
-	return `${product.name}: £${product.price.toFixed(2)}`;
+    describe(): string
+    {
+        return `${this.name}: ${this.currency} ${this.price.toFixed(2)}`;
+    }
 }
 
 const button = $(`#show-product`);
 const output = $(`#result`);
+const product = new Product("Coffee", 3.5, "EUR");
 
 button.on(`click`, () =>
 {
-	output.text(describeProduct(
-	{
-		name: "Coffee",
-		price: 3.5,
-	}));
+	output.text(product.describe());
 });
